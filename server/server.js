@@ -9,7 +9,7 @@ const userRoutes = require('./routes/user')
 const app = express()
 
 app.use(cors({
-    origin: "https://enchanting-shortbread-13fe9b.netlify.app/"
+    origin: "https://enchanting-shortbread-13fe9b.netlify.app"
 }))
 app.use(express.json())
 app.use((req, res, next) => {
