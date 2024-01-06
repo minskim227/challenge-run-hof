@@ -14,7 +14,7 @@ function Home() {
     useEffect(() => {
         const fetchTeams = async () => {
             try {
-                const response = await axios.get('/api/teams')
+                const response = await axios.get('https://challenge-run-hof.onrender.com/api/teams')
                 dispatch({type: 'SET_TEAMS', payload: response.data})
             } catch (error) {
                 if (error.response) {

@@ -15,7 +15,7 @@ export const useLogin = () => {
         setIsLoading(true)
 
         try {
-            const response = await axios.post('/api/user/login', {username, password})
+            const response = await axios.post('https://challenge-run-hof.onrender.com/api/user/login', {username, password})
             dispatch({type: 'LOGIN', payload: response})
             localStorage.setItem('user', JSON.stringify(response))
             setIsLoading(false)

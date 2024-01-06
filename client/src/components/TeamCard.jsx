@@ -51,7 +51,7 @@ function TeamCard({ team }) {
         }
 
         try {
-            const response = await axios.delete(`/api/teams/${team._id}`, {
+            const response = await axios.delete(`https://challenge-run-hof.onrender.com/api/teams/${team._id}`, {
                 data: { team },
                 headers : {
                     'Authorization': `Bearer ${user.data.token}`

@@ -92,7 +92,7 @@ function NewTeamForm() {
         }
 
         try {
-            const response = await axios.post('/api/teams', team, {
+            const response = await axios.post('https://challenge-run-hof.onrender.com/api/teams', team, {
                 headers: {
                     'Authorization': `Bearer ${user.data.token}`
                 }
