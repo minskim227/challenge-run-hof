@@ -5,7 +5,6 @@ import axios from 'axios'
 
 import TeamCard from "../components/TeamCard"
 import NewTeamForm from "../components/NewTeamForm"
-import SpunDown from "../components/SpunDown"
 
 function Home() {
 
@@ -28,28 +27,20 @@ function Home() {
         fetchTeams()
     },[teams && teams.length])
 
-    return (
-        <>
-            {teams ? (
-                <div className="max-w-6xl p-4 mx-auto my-0 flex justify-center">
-                    <div className={user ? "w-2/3" : "w-4/5"}>
-                        {teams && teams.map(team => (
-                            <TeamCard key={team._id} team={team} />
-                        ))}
-                    </div>
-                    {user ? (
-                        <div className="w-2/5">
-                            <NewTeamForm />
-                        </div>
-                        ) : null
-                    }
+    return(
+        <div className="max-w-6xl p-4 mx-auto my-0 flex justify-center">
+            <div className={user ? "w-2/3" : "w-4/5"}>
+                {teams && teams.map(team => (
+                    <TeamCard key={team._id} team={team} />
+                ))}
+            </div>
+            {user ? (
+                <div className="w-2/5">
+                    <NewTeamForm />
                 </div>
-            ) : (
-                <div className="max-w-6xl p-4 mx-auto my-0 flex justify-center">
-                    <SpunDown />
-                </div>
-            )}
-        </>
+                ) : null
+            }
+        </div>
     )
 }
 
